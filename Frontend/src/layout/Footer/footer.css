@@ -1,0 +1,82 @@
+footer{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    font-weight: 500;
+}
+
+footer .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+    padding-inline: 2rem;
+    border-top: 1px solid #1a4349;
+    border-bottom: 1px solid #1a4349;
+    gap: 2rem;
+}
+
+footer .info{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6rem;
+    padding-bottom: 12rem;
+    width: 1000px;
+    color: #4b4b4b;
+}
+
+footer .content .footer-logo{
+    display: flex;
+    flex-direction: column;
+    text-wrap: nowrap;
+    flex: 2;
+}
+
+footer .content .footer-links{
+    display: flex;
+    justify-content: space-around;
+    align-items: self-start;
+    text-align: start;
+    flex-direction: row;
+    text-wrap: nowrap;
+    gap: 2rem;
+    flex: 3;
+}
+.footer-links h1{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+.footer-links li{
+    font-size: 16px;
+    font-weight: 450;
+    margin-bottom: 1rem;
+}
+
+footer img{
+    height: 50px;
+}
+
+footer .copy{
+    display: flex;
+    justify-content: space-between;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin-inline: 3rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
+}
+
+footer .copy .links{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+@media screen and (max-width: 911px){
+    footer .content .footer-links{
+        justify-content: space-between;
+    }
+}

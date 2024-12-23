@@ -1,0 +1,128 @@
+.navbar{
+    position: sticky;
+    top: 0;
+    padding-block: 14px;
+    padding-inline: 3rem;
+    box-shadow: 0 1px 8px rgba(0,0,0,.15);
+    z-index: 10;
+    background: #fff;
+}
+.navbar .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1800px;
+    width: 100%;
+    margin: auto;
+}
+
+.navbar .container .logo img{
+    height: 36px;
+    object-fit: contain;
+}
+
+.navbar .container .links{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .container .links li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+}
+.navbar .container .links li:hover{
+    background: rgb(234, 234, 234);
+}
+.navbar .container .link{
+    color: inherit;
+    font-size: 16px;
+    font-weight:400;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar .container .userInfo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+.navbar .container .userInfo li:nth-child(1){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+.navbar .container .userInfo li:nth-child(1) img{
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 1px solid #787878;
+}
+
+.navbar .container .userInfo .unlogin{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 2rem;
+}
+.navbar .container .userInfo .unlogin{
+    border-radius: 5px;
+}
+.navbar .container .userInfo .unlogin:nth-child(1){
+    background: #dddddd;
+}
+.navbar .container .userInfo .unlogin:nth-child(2){
+    background: rgb(19, 19, 19);
+    color: #fff;
+}
+
+.navbar .container span{
+    cursor: pointer;
+}
+
+.navbar .container .write{
+    background: var(--lightGreen);
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid white;
+}
+
+.navbar .container .write:hover{
+    color: teal;
+    background: white;
+    border: 1px solid teal;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 1110px){
+    .navbar .container .links{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 930px){
+    .navbar{
+       padding-inline: 1rem;
+       padding-block: 1rem;
+    }
+    .navbar .container .write{
+        width: fit-content;
+        height: fit-content;
+        padding: 5px 10px;
+        border-radius: 6px;
+    }
+}

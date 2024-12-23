@@ -1,0 +1,20 @@
+{
+  "rewrites": [
+    {
+      "source": "/auth/(.*)", 
+      "destination": "https://proyecto-utn-back.vercel.app/auth/$1"
+    },
+    {
+      "source": "/user/(.*)", 
+      "destination": "https://proyecto-utn-back.vercel.app/user/$1"
+    },
+    {
+      "source": "/post/(.*)", 
+      "destination": "https://proyecto-utn-back.vercel.app/post/$1"
+    },
+    {
+      "source": "/(.*)", 
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -1,0 +1,167 @@
+.auth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin: 70px auto;
+    width: 1000px;
+    height: 500px;
+    border-radius: 10px;
+    border: 1px solid rgb(1, 154, 116);
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 24px 48px;
+
+}
+.auth.login{
+    height: 450px;
+}
+
+.auth .block1{
+    width: 42%;
+    height: 100%;
+    position: relative;
+    color: #182e27;
+    background: linear-gradient(142deg, rgba(12,189,142,1) 40%, rgba(1,123,96,1) 100%);
+}
+
+.auth .block2{
+    width: 58%;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth .block1 .block1-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem 1.2rem;
+}
+
+.block1-container .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+.block1-container .logo img{
+    height: 45px;
+    width: 100%;
+    object-fit: contain;
+}
+
+.block1-container span{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 1rem;
+}
+
+.block1-container .img-vector{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.block1-container .img-vector img{
+    width: 200px;
+    aspect-ratio: 25/23;
+}
+
+
+.auth .block2 h1{
+    font-size: 20px;
+}
+
+.auth .block2{
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px;
+    background: white;
+    gap: 1rem;
+}
+
+.auth form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.auth form label{
+    font-size: 14px;
+    font-weight: 500;
+}
+.auth form input{
+    padding: 10px;
+    outline: transparent solid 2px;
+    outline-offset: 2px;
+    accent-color: rgb(16, 63, 239);
+    border-radius: 0.375rem;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.auth form button{
+    padding: 10px;
+    border: none;
+    background: rgb(10, 196, 131);
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 6px;
+}
+
+.auth .block2 .noaccount{
+    font-size: 14px;
+    color: gray;
+}
+.auth .block2 .noaccount a{
+    color: rgb(16, 63, 239);
+    text-decoration: underline;
+}
+
+.auth .block2 p{
+    color: red;
+    font-size: 14px;
+}
+
+@media screen and (max-width: 1060px) {
+    .auth{
+        height: auto;
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .auth{
+        flex-direction: column-reverse;
+        height: 100%;
+        width: 600px;
+        margin-top: 1rem;
+    }
+    .auth .block1{
+        width: 100%;
+        padding-top: 1rem;
+    }
+    .auth .block2{
+        width: 100%;
+        margin-bottom: 1rem;
+        padding: 10px 30px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .auth{
+        flex-direction: column-reverse;
+        height: 100%;
+        width: 100%;
+        border: 0;
+        border-radius: 0;
+        margin-top: 1.5rem;
+    }
+    .auth .block1{
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .auth .block2{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+}

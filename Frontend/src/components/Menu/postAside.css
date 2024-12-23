@@ -1,0 +1,40 @@
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.menu h1{
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.menu .post{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu .post img{
+    width: 100%;
+    height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.menu .post h2{
+    font-size: 20px;
+    color: #555;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-break: auto;
+    -webkit-box-orient: vertical;
+}
+
+.post  span{
+    font-size: 14px;
+    text-decoration: underline;
+    color: rgb(59, 130, 246);
+}

@@ -1,0 +1,15 @@
+.home .banner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 8rem;
+    padding-bottom: 9rem;
+    padding-inline: 1.2rem;
+    background: linear-gradient(142deg, rgba(12,189,142,1) 40%, rgba(1,123,96,1) 100%);
+}
+.home .banner p{
+    margin-top: 1rem;
+    line-height: 1.6;
+    max-width: 700px;
+}

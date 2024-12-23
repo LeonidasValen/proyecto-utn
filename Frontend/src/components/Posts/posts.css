@@ -1,0 +1,94 @@
+
+.home .posts{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+    max-width: 1350px;
+    margin: auto;
+    margin-top: 3rem;
+    gap: 2rem;
+    row-gap: 40px;
+    padding-inline: 2rem;
+}
+
+.home .post{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.home .post .date{
+    font-size: 14px;
+}
+
+.home .post .img{
+    position: relative;
+    height: 250px;
+}
+.home .post img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.home .post .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.home .post .content h1{
+    font-size: 26px;
+    transition: 0.2s;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-break: auto;
+    -webkit-box-orient: vertical;
+}
+.home .posts a:hover h1{
+    color: rgb(59, 130, 246);
+}
+
+.home .post .content .descip-content{
+    font-size: 16px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-break: auto;
+    -webkit-box-orient: vertical;
+    color: rgb(102, 102, 102)!important;
+    font-weight: 400;
+}
+.descip-content p, .descip-content span, .descip-content strong{
+    color: rgb(102, 102, 102)!important;
+}
+
+.home .post .content button{
+    width: max-content;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: white;
+    border: 1px solid teal;
+    color: teal;
+}
+.home .post .content button:hover{
+    border: 1px solid white;
+    background: teal;
+    color: black;
+}
+
+@media screen and (max-width: 1150px){
+    .home .posts{
+        grid-template-columns: repeat(2, minmax(200px, 1fr));
+    }
+}
+
+@media screen and (max-width: 800px){
+    .home .posts{
+        grid-template-columns: repeat(1, minmax(200px, 1fr));
+    }
+}
