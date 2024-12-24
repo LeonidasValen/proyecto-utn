@@ -79,4 +79,16 @@ footer .copy .links{
     footer .content .footer-links{
         justify-content: space-between;
     }
+    footer .copy{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        margin-inline: 0;
+    }
+}
+
+@media screen and (max-width: 620px){
+    footer .copy{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

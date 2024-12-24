@@ -108,9 +108,16 @@
     transition: 0.3s;
 }
 
+.write .linkIcon{
+    display: none;
+}
+
 @media screen and (max-width: 1110px){
     .navbar .container .links{
         display: none;
+    }
+    .navbar .container .logo img{
+        height: 34px;
     }
 }
 
@@ -124,5 +131,26 @@
         height: fit-content;
         padding: 5px 10px;
         border-radius: 6px;
+    }
+    .navbar .container .logo img{
+        height: 30px;
+    }
+}
+
+@media screen and (max-width: 640px){
+     .write .linkFont{
+        display: none;
+    }
+    .write .linkIcon{
+        display: flex;
+    }
+    .navbar .container .write{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        border-radius: 50%;
     }
 }

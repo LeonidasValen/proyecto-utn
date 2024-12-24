@@ -12,7 +12,7 @@ export function Register() {
   const [errors, setErrors] = useState({})
   const [errorBackEnd, setErrorBackEnd] = useState({})
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     email: '',
     password: ''
   })
@@ -38,7 +38,7 @@ export function Register() {
         newErrors.email = 'Ingrese un correo electrónico válido'
       }
     }
-    if (!formData.name) newErrors.name = 'El nombre es obligatorio'
+    if (!formData.username) newErrors.username = 'El nombre es obligatorio'
 
     if (!formData.password) newErrors.password = 'El contraseña es obligatorio'
 
@@ -84,11 +84,11 @@ export function Register() {
       <section className="block2">
         <form className='register' onSubmit={handleSubmit}>
           <h1>Registro</h1>
-          <label htmlFor="name">Nombre</label>
+          <label htmlFor="username">Nombre</label>
           <input type="text" placeholder='Nombre'
-            name="name"
+            name="username"
             onChange={handleChange} />
-          {errors.name && <p className="field-error">{errors.name}</p>}
+          {errors.username && <p className="field-error">{errors.username}</p>}
           <label htmlFor="email">Correo</label>
           <input type="text" placeholder='Correo'
             name="email"

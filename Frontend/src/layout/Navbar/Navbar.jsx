@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
+import { IconWrite } from "../../assets/Icons";
 import './navbar.css'
 
 export function Navbar() {
@@ -45,7 +46,8 @@ export function Navbar() {
                                 <span onClick={handleLogout}>Cerrar sesion</span>
                             </li>
                             <li className="write">
-                                <Link className="link" to={"/write"}>Escribir</Link>
+                                <Link to={"/write"} className="linkFont">Escribir</Link>
+                                <Link to={"/write"} className="linkIcon"><IconWrite /></Link>
                             </li>
                         </>
                     ) : (
