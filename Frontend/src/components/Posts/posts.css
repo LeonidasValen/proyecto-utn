@@ -1,4 +1,3 @@
-
 .home .posts{
     position: relative;
     display: grid;
@@ -19,6 +18,7 @@
 
 .home .post .date{
     font-size: 14px;
+    color: #000;
 }
 
 .home .post .img{
@@ -41,6 +41,7 @@
 
 .home .post .content h1{
     font-size: 26px;
+    color: #000;
     transition: 0.2s;
     overflow: hidden;
     display: -webkit-box;
@@ -56,13 +57,14 @@
     font-size: 16px;
     overflow: hidden;
     display: -webkit-box;
+    line-height: 1.1rem;
     -webkit-line-clamp: 3;
     line-break: auto;
     -webkit-box-orient: vertical;
     color: rgb(102, 102, 102)!important;
     font-weight: 400;
 }
-.descip-content p, .descip-content span, .descip-content strong{
+.descip-content p, .descip-content span, .descip-content strong, .descip-content a{
     color: rgb(102, 102, 102)!important;
 }
 

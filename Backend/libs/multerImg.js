@@ -30,19 +30,26 @@ export const uploadImage = (req, res, next) => {
     upload(req, res, async (err) => {
         if (err instanceof multer.MulterError) {
             console.error("Multer error:", err);
-            return res.status(400).json({ error: `Error en la carga del archivo: ${err.message}` }); //error al cargar el archivo para subirlo o formato de archivo no permitido
+            return res.status(400).json({ error: `Error en la carga del archivo: ${err.message}` });
         } else if (err) {
             console.error("Error general:", err);
-            return res.status(500).json({ error: "Error al procesar la imagen. Intenta nuevamente." }); //error de conexion a Cloudinary o general
+            return res.status(500).json({ error: "Error al procesar la imagen. Intenta nuevamente." });
         }
 
-        try {
-            const cloudinaryResponse = await cloudinary.uploader.upload(req.file.path);
-            req.file.cloudinaryUrl = cloudinaryResponse.secure_url;
-            next();
-        } catch (cloudinaryErr) {
-            console.error("Error al subir a Cloudinary:", cloudinaryErr);
-            return res.status(500).json({ error: "Error al conectar con Cloudinary. Intenta nuevamente." });
+        if (req.file) {
+            try {
+                const cloudinaryResponse = await cloudinary.uploader.upload(req.file.path, {
+                    folder: "blog",
+                });
+                req.file.cloudinaryUrl = cloudinaryResponse.secure_url;
+                req.file.public_id = cloudinaryResponse.public_id; // Guarda el public_id para eliminar si es necesario
+                next();
+            } catch (cloudinaryErr) {
+                console.error("Error al subir a Cloudinary:", cloudinaryErr);
+                return res.status(500).json({ error: "Error al conectar con Cloudinary. Intenta nuevamente." });
+            }
+        } else {
+            next(); // Continuar sin subir una nueva imagen
         }
     });
 };

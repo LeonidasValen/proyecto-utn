@@ -75,6 +75,10 @@ footer .copy .links{
     gap: 10px;
 }
 
+footer .copy .links a{
+    color: #000;
+}
+
 @media screen and (max-width: 911px){
     footer .content .footer-links{
         justify-content: space-between;

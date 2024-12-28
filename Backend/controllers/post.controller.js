@@ -1,7 +1,7 @@
 import Posts from "../models/Posts.js";
-
+import { v2 as cloudinary } from "cloudinary";
 export const getPosts = async (req, res) => {
-    const {cat, page = 1, limit = 10} = req.query;  
+    const { cat, page = 1, limit = 10 } = req.query;
 
     const pageNum = parseInt(page, 10);
     const limitNum = parseInt(limit, 10);
@@ -14,11 +14,18 @@ export const getPosts = async (req, res) => {
             query.cat = cat;
         }
 
-        console.log(cat)
-
         const posts = await Posts.find(query).skip(skip).limit(limitNum).sort({ createdAt: -1 });
 
-        res.status(200).json(posts);
+        res.status(200).json(
+            posts.map(post => ({
+                _id: post._id,
+                title: post.title,
+                descrip: post.descrip,
+                cat: post.cat,
+                img: post.img,
+                createdAt: post.createdAt,
+            }))
+        );
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: "Error interno del servidor" });
@@ -26,10 +33,10 @@ export const getPosts = async (req, res) => {
 }
 
 export const getPostsAside = async (req, res) => {
-    const {cat, exclude, page = 1, limit = 5} = req.query;  
+    const { cat, exclude, page = 1, limit = 5 } = req.query;
 
     const pageNum = parseInt(page, 10);
-    const limitNum = parseInt(limit, 5);
+    const limitNum = parseInt(limit, 3);
     try {
         const skip = (pageNum - 1) * limitNum;
 
@@ -86,7 +93,7 @@ export const addPost = async (req, res) => {
 
         await post.save();
 
-        res.status(201).json({message: "Post creado con éxito"});
+        res.status(201).json({ message: "Post creado con éxito" });
     } catch (error) {
         console.log(error);
         res.status(500).json({ message: "Error interno del servidor" });
@@ -95,19 +102,33 @@ export const addPost = async (req, res) => {
 
 export const updatePost = async (req, res) => {
     const { title, descrip, cat } = req.body;
-    const img = req.file?.path;
+    const newImg = req.file?.cloudinaryUrl;
     const postId = req.params.id;
 
     try {
-        const post = await Posts.findByIdAndUpdate(postId, { title, descrip, cat, img});
+        const post = await Posts.findById(postId);
 
         if (!post) {
             return res.status(404).json({ message: "Post no encontrado" });
         }
 
-        res.status(200).json({message: "Post actualizado con éxito"});
+        // Si hay una imagen anterior, eliminarla de Cloudinary
+        if (post.img && post.img.includes("cloudinary")) {
+            const oldPublicId = post.img.split("/").pop().split(".")[0]; 
+            await cloudinary.uploader.destroy(`blog/${oldPublicId}`);
+        }
+
+        // Actualizar el post con los nuevos datos
+        post.title = title || post.title;
+        post.descrip = descrip || post.descrip;
+        post.cat = cat || post.cat;
+        post.img = newImg || post.img;
+
+        await post.save();
+
+        res.status(200).json({ message: "Post actualizado con éxito" });
     } catch (error) {
-        console.log(error);
+        console.error(error);
         res.status(500).json({ message: "Error interno del servidor" });
     }
 };

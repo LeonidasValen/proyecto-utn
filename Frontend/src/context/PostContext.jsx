@@ -31,7 +31,6 @@ export const PostProvider = ({ children }) => {
     }
     
     const updatePost = async (data, id) => {
-        console.log(data)
         await fetchData({
             url: `/post/updatePost/${id}`,
             method: 'put',

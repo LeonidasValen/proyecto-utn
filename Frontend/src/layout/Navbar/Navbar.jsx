@@ -28,7 +28,7 @@ export function Navbar() {
                 <ul className="links">
                     <li><Link className="link" to={"/?cat=art"}>ART</Link></li>
                     <li><Link className="link" to={"/?cat=videogames"}>Videojuegos</Link></li>
-                    <li><Link className="link" to={"/?cat=technology"}>Tecnologia</Link></li>
+                    <li><Link className="link" to={"/?cat=tecnologies"}>Tecnologia</Link></li>
                     <li><Link className="link" to={"/?cat=cinema"}>Cine</Link></li>
                     <li><Link className="link" to={"/?cat=food"}>Comidas</Link></li>
                 </ul>
