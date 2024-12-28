@@ -16,9 +16,9 @@ Esta API RESTful, construida con Node.js y ReactJS, permite a los usuarios logge
 ### Instalación:
 
 **Prerrequisitos:**
-* **Node.js:** Instala Node.js desde (nodejs.org)[https://nodejs.org/en/].
-* **MongoDB:** Crea una cuenta en MongoDB y crea una base de datos en (mongodb.com)[https://www.mongodb.com/].
-* **Clodiniary:** Crea una cuenta en (cloudinary.com)[https://cloudinary.com/].
+* **Node.js:** Instala Node.js desde (nodejs.org)[https://nodejs.org/en/ "nodejs.org"].
+* **MongoDB:** Crea una cuenta en MongoDB y crea una base de datos en (mongodb.com)[https://www.mongodb.com/ "mongodb.com"].
+* **Clodiniary:** Crea una cuenta en (cloudinary.com)[https://cloudinary.com/ ""cloudinary.com"].
 
 **Pasos:**
 
